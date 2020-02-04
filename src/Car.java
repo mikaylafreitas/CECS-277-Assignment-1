@@ -1,5 +1,5 @@
-
-public class Car {
-//testing GitHub
+public class Car extends Vehicle{
+	public Car(){
+		this("No Name")
+	}
 }
-// test
