@@ -1,5 +1,8 @@
 public class Car extends Vehicle{
 	public Car(){
-		this("No Name")
+		this("No Name");
+	}
+	public Car(String name){
+		this(name, )
 	}
 }
