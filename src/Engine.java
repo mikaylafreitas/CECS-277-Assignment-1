@@ -22,14 +22,24 @@ public class Engine
 		return mFuel;
 	}
 	
-	/*
+	
 	@Override
 	public String toString()
+	{
+		return "Engine: Maker = " + mMaker + ", Fuel = " + mFuel;
+	}
+	
 	
 	@Override
 	public boolean equals(Object other)
-	
-	*/
+	{
+		if(!(other instanceof Engine)) return false;
+		else
+		{
+			Engine e = (Engine)other;
+			return mMaker == e.mMaker && mFuel == e.mFuel;
+		}
+	}
 	
 	private String mMaker;
 	private String mFuel;
