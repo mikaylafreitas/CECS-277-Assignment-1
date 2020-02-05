@@ -38,7 +38,9 @@ public class Airplane extends Vehicle{
 			return false;
 		}
 		else{
-			//complete here
+			Airplane a = (Airplane)other;
+			return getName().equals(a.getName()) && getEngine().equals(a.getEngine()) 
+					&& mCostPerHour.equals(a.mCostPerHour);
 		}
 	}
 	
