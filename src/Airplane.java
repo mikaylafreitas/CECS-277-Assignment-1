@@ -32,6 +32,16 @@ public class Airplane extends Vehicle{
 		return super.getEngine();
 	}
 	
+	@Override
+	public boolean equals(Object other){
+		if(!(other instanceof Airplane)){
+			return false;
+		}
+		else{
+			//complete here
+		}
+	}
+	
 	public double getCostPerHour(){
 		return mCostPerHour;
 	}
