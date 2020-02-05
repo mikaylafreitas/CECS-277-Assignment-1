@@ -30,7 +30,7 @@ public class Engine {
 		}
 		else{
 			Engine e = (Engine)other;
-			return mMaker == e.mMaker && mFuel == e.mFuel;
+			return mMaker.equals(e.mMaker) && mFuel.equals(e.mFuel);
 		}
 	}
 	
