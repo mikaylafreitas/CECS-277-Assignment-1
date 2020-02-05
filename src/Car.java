@@ -17,7 +17,29 @@ public class Car extends Vehicle{
 		super(name, engine);
 		mMilesPerGallon = milesPerGallon;
 	}
-	//still incomplete
+	
+	@Override
+	public String getName(){
+		return super.getName();
+	}
+	
+	@Override
+	public Engine getEngine(){
+		return super.getEngine();
+	}
+	
+	@Override
+	public boolean equals(Object other){
+		if(!(other instanceof Car)){
+			return false;
+		}
+		else{
+			Car c = (Car)other;
+			return getName().equals(c.getName()) && getEngine().equals(a.getEngine()) 
+					&& mMilesPerGallon.equals(c.mMilesPerGallon);
+		}
+	}
 	
 	private double mMilesPerGallon;
+	private final double CPG = 3;
 }
