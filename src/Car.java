@@ -17,7 +17,7 @@ public class Car extends Vehicle{
 		super(name, engine);
 		mMilesPerGallon = milesPerGallon;
 	}
-	
+	//still incomplete
 	
 	private double mMilesPerGallon;
 }
