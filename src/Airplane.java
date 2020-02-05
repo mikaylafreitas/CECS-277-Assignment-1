@@ -33,6 +33,11 @@ public class Airplane extends Vehicle{
 	}
 	
 	@Override
+	public String toString(){
+		return "Airplane: " + super.toString() + ", Cost per hour = " + mCostPerHour;
+	}
+	
+	@Override
 	public boolean equals(Object other){
 		if(!(other instanceof Airplane)){
 			return false;
@@ -49,4 +54,6 @@ public class Airplane extends Vehicle{
 	}
 	
 	private double mCostPerHour;
+	private final double CPH = 500;
+	
 }
