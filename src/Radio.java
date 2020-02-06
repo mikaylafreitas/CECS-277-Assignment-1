@@ -1,3 +1,6 @@
+// Assignment One
+// Mikayla Freitas
+// Michael Kriesel
 
 public class Radio 
 {
@@ -12,7 +15,7 @@ public class Radio
 	}
 	
 	public String getName()
-	{
+	{	
 		return mName;
 	}
 	

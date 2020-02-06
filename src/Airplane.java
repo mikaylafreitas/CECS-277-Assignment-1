@@ -1,3 +1,6 @@
+// Assignment One
+// Mikayla Freitas
+// Michael Kriesel
 
 public class Airplane extends Vehicle
 {
@@ -57,6 +60,6 @@ public class Airplane extends Vehicle
 	}
 	
 	private int mCostPerHour;
-	private static final double MPH = 500;
+	private static final int MPH = 500;
 	
 }

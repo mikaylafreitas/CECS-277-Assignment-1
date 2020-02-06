@@ -1,5 +1,9 @@
+// Assignment One
+// Mikayla Freitas
+// Michael Kriesel
 
-public class Car extends Vehicle{
+public class Car extends Vehicle
+{
 	
 	public Car()
 	{
