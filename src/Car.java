@@ -51,7 +51,7 @@ public class Car extends Vehicle{
 		else
 		{
 			Car c = (Car)other;
-			return getName().equals(c.getName()) && 
+			return getName() == c.getName() && 
 					mMilesPerGallon == c.mMilesPerGallon;
 		}
 	}

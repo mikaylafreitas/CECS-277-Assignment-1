@@ -40,7 +40,7 @@ public class Airplane extends Vehicle
 		else
 		{
 			Airplane a = (Airplane)other;
-			return getName().equals(a.getName()) && getEngine().equals(a.getEngine()) 
+			return super.equals(a) && getName() == a.getName() 
 					&& mCostPerHour == a.mCostPerHour;
 		}
 	}
