@@ -1,35 +1,31 @@
 
-public class Airplane extends Vehicle{
+public class Airplane extends Vehicle
+{
 	
-	public Airplane(){
+	public Airplane()
+	{
 		this("No name Airplane");
 	}
 	
-	public Airplane(String name){
+	public Airplane(String name)
+	{
 		this(name, 500);
 	}
 	
-	public Airplane(String name, double costPerHour){
-		this(name, costPerHour, new Engine("PrattAndWhitney", "Kerosene"))
+	public Airplane(String name, int costPerHour)
+	{
+		this(name, costPerHour, new Engine("PrattAndWhitney", "Kerosene"));
 	}
 	
-	public Airplane(String name, double costPerHour, Engine engine){
+	public Airplane(String name, int costPerHour, Engine engine)
+	{
 		super(name, engine);
 		mCostPerHour = costPerHour;
 	}
 	
-	public Airplane(Airplane a){
+	public Airplane(Airplane a)
+	{
 		this(a.getName(),a.getCostPerHour(),a.getEngine());
-	}
-	
-	@Override
-	public String getName(){
-		return super.getName();
-	}
-	
-	@Override
-	public Engine getEngine(){
-		return super.getEngine();
 	}
 	
 	@Override
@@ -38,22 +34,29 @@ public class Airplane extends Vehicle{
 	}
 	
 	@Override
-	public boolean equals(Object other){
-		if(!(other instanceof Airplane)){
-			return false;
-		}
-		else{
+	public boolean equals(Object other)
+	{
+		if(!(other instanceof Airplane)) return false;
+		else
+		{
 			Airplane a = (Airplane)other;
 			return getName().equals(a.getName()) && getEngine().equals(a.getEngine()) 
-					&& mCostPerHour.equals(a.mCostPerHour);
+					&& mCostPerHour == a.mCostPerHour;
 		}
 	}
 	
-	public double getCostPerHour(){
+	@Override
+	public int getTripCost(int miles)
+	{
+		return 0;
+	}
+	
+	public int getCostPerHour()
+	{
 		return mCostPerHour;
 	}
 	
-	private double mCostPerHour;
-	private final double CPH = 500;
+	private int mCostPerHour;
+	private static final double MPH = 500;
 	
 }

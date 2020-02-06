@@ -1,45 +1,69 @@
 
 public class Car extends Vehicle{
 	
-	public Car(){
+	public Car()
+	{
 		this("No name Car");
 	}
 	
-	public Car(String name){
+	public Car(String name)
+	{
 		this(name, 20);
 	}
 	
-	public Car(String name, double milesPerGallon){
+	public Car(String name, int milesPerGallon)
+	{
 		this(name, milesPerGallon, new Engine("Chevy", "Gas"));
 	}
 	
-	public Car(String name, double milesPerGallon, Engine engine){
+	public Car(String name, int milesPerGallon, Engine engine)
+	{
 		super(name, engine);
 		mMilesPerGallon = milesPerGallon;
+		mRadio = new Radio();
+	}
+	
+	public Car(Car c)
+	{
+		this(c.getName(), c.getMilesPerGallon(), c.getEngine());
+	}
+	
+	public void setRadio(Radio radio)
+	{
+		mRadio = radio;
+	}
+	
+	public int getMilesPerGallon()
+	{
+		return mMilesPerGallon;
 	}
 	
 	@Override
-	public String getName(){
-		return super.getName();
+	public String toString()
+	{
+		return "Car: " + super.toString() + ", MPG: " + mMilesPerGallon + ", "  + mRadio;
 	}
 	
 	@Override
-	public Engine getEngine(){
-		return super.getEngine();
-	}
-	
-	@Override
-	public boolean equals(Object other){
-		if(!(other instanceof Car)){
-			return false;
-		}
-		else{
+	public boolean equals(Object other)
+	{
+		if(!(other instanceof Car)) return false;
+		else
+		{
 			Car c = (Car)other;
-			return getName().equals(c.getName()) && getEngine().equals(a.getEngine()) 
-					&& mMilesPerGallon.equals(c.mMilesPerGallon);
+			return getName().equals(c.getName()) && 
+					mMilesPerGallon == c.mMilesPerGallon;
 		}
 	}
 	
-	private double mMilesPerGallon;
-	private final double CPG = 3;
+	@Override
+	public int getTripCost(int miles)
+	{
+		return (miles / mMilesPerGallon) * CPG;
+	}
+	
+	private int mMilesPerGallon;
+	private Radio mRadio;
+	
+	private static final int CPG = 3;
 }
