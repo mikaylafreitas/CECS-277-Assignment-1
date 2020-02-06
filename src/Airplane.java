@@ -48,7 +48,7 @@ public class Airplane extends Vehicle
 	@Override
 	public int getTripCost(int miles)
 	{
-		return 0;
+		return (miles / MPH) * mCostPerHour;
 	}
 	
 	public int getCostPerHour()
